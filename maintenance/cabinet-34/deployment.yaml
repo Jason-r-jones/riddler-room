@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: funhouse-room-prod
+  name: funhouse-room-room12
 spec:
   replicas: 1
   selector:
     matchLabels:
-      funhouse.riddler/room-id: prod
+      funhouse.riddler/room-id: room12
   template:
     metadata:
       labels:
-        funhouse.riddler/room-id: prod
+        funhouse.riddler/room-id: room12
     spec:
       nodeSelector:
         app: riddler
@@ -25,7 +25,7 @@ spec:
           # STAGE flips here without waiting on git reconcile.
           envFrom:
             - configMapRef:
-                name: funhouse-room-prod-stage
+                name: funhouse-room-room12-stage
           readinessProbe:
             httpGet:
               path: /healthz
