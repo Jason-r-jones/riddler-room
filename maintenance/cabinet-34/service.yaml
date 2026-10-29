@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: funhouse-room-room12
+  name: funhouse-room-room11
 spec:
   selector:
-    funhouse.riddler/room-id: room12
+    funhouse.riddler/room-id: room11
   ports:
     - name: http
       port: 80
