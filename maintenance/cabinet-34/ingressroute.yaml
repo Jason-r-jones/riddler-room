@@ -1,7 +1,7 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: funhouse-room-room12
+  name: funhouse-room-room11
 spec:
   entryPoints:
     - websecure
@@ -9,17 +9,17 @@ spec:
     - match: Host(`riddler.nkplab.com`) && PathPrefix(`/r/5ACXek3yGpUU`)
       kind: Rule
       services:
-        - name: funhouse-room-room12
+        - name: funhouse-room-room11
           port: 80
       middlewares:
-        - name: funhouse-room-room12-strip
+        - name: funhouse-room-room11-strip
   # Use Traefik entrypoint / default cert store (TLS secret stays in app ns).
   tls: {}
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: funhouse-room-room12-strip
+  name: funhouse-room-room11-strip
 spec:
   stripPrefix:
     prefixes:
